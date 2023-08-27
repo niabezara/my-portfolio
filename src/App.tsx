@@ -1,35 +1,32 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import GlobalStyle from "./globalStyles";
+import HomePage from "./routes/HomePage";
+import Contact from "./routes/Contact";
+import About from "./routes/About";
+import Projects from "./routes/Projects";
+import { Link, Element } from "react-scroll";
+import NavBar from "./components/NavBar";
+import menuItems from "./data/source";
+// import "./App.css";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <GlobalStyle />
+      <NavBar />
+      <main>
+        {menuItems.map((menu) => (
+          <Element key={menu.id} name={menu.title}>
+            <div className="content">
+              {menu.title === "home" && <HomePage />}
+              {menu.title === "about" && <About />}
+              {menu.title === "Portfolio" && <Projects />}
+              {menu.title === "Contact" && <Contact />}
+            </div>
+          </Element>
+        ))}
+      </main>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
