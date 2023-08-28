@@ -6,10 +6,16 @@ const GlobalStyle = createGlobalStyle`
     padding:0;
     box-sizing: border-box;
 }
-  body {
-    background: #a7c8c8;
-    font-family: Open-Sans, Helvetica, Sans-Serif;
-  }
+ html,
+body {
+  overscroll-behavior: none;
+  font-family: Arial Black, sans-serif;
+  text-align: center;
+ 
+}
+
+
+
 
 `;
 

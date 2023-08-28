@@ -3,16 +3,19 @@ import HomePage from "./routes/HomePage";
 import Contact from "./routes/Contact";
 import About from "./routes/About";
 import Projects from "./routes/Projects";
-import { Link, Element } from "react-scroll";
+import { Element } from "react-scroll";
 import NavBar from "./components/NavBar";
 import menuItems from "./data/source";
-// import "./App.css";
+import { useState } from "react";
 
 function App() {
+  const [menuOpen, setMenuOpen] = useState(false);
+
   return (
     <>
       <GlobalStyle />
-      <NavBar />
+      <NavBar setMenuOpen={setMenuOpen} menuOpen={menuOpen} />
+
       <main>
         {menuItems.map((menu) => (
           <Element key={menu.id} name={menu.title}>
