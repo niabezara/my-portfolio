@@ -6,15 +6,17 @@ const GlobalStyle = createGlobalStyle`
     padding:0;
     box-sizing: border-box;
 }
- html,
+html{
+  font-size:62.5%;
+}
+
 body {
   overscroll-behavior: none;
-  font-family: Arial Black, sans-serif;
+  background-color: #fffdf8;
+    font-family: 'Raleway', sans-serif;
   text-align: center;
  
 }
-
-
 
 
 `;
