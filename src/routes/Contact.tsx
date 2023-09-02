@@ -9,26 +9,6 @@ type Inputs = {
   message: string;
 };
 
-type Theme = {
-  $pink: string;
-  $purple: string;
-  $orange: string;
-  $yellow: string;
-  $green: string;
-  $red: string;
-  $serif: string;
-};
-
-const theme: Theme = {
-  $pink: "#f5b4b8",
-  $purple: "#2a3088",
-  $orange: "#f6b781",
-  $yellow: "#fcdab7",
-  $green: "#00927f",
-  $red: "#eb638b",
-  $serif: "Playfair Display, serif",
-};
-
 export default function Contact() {
   const [success, setSuccess] = useState<boolean | null>(null);
   const ref = useRef<HTMLFormElement | null>(null);
@@ -69,16 +49,10 @@ export default function Contact() {
       <Wrapper>
         <Container success={success}>
           <Adress>
-            <p>
-              666 2nd Ave S <br />
-              Tbilisi
-            </p>
+            <p>Tbilisi</p>
           </Adress>
           <Adress>
-            <p>
-              Georgia <br />
-              Tbilisi
-            </p>
+            <p>Georgia</p>
           </Adress>
           <Title>Contact Me</Title>
           <Pen></Pen>
@@ -92,6 +66,7 @@ export default function Contact() {
               <Inputwrap>
                 <Input
                   placeholder="Name"
+                  style={{ fontFamily: "Raleway", fontStyle: " sans-serif" }}
                   {...register("to_name", { required: true })}
                   aria-invalid={errors.to_name ? "true" : "false"}
                 />
@@ -108,6 +83,7 @@ export default function Contact() {
               <Inputwrap>
                 <Input
                   placeholder="Email"
+                  style={{ fontFamily: "Raleway", fontStyle: " sans-serif" }}
                   {...register("from_name", {
                     required: "Email Address is required",
                   })}
@@ -125,6 +101,7 @@ export default function Contact() {
               </Inputwrap>
               <TextArea
                 placeholder="Write your message"
+                style={{ fontFamily: "Raleway", fontStyle: " sans-serif" }}
                 {...register("message", { required: true })}
               />
               <BtnWrap>
@@ -146,6 +123,7 @@ const Section = styled.div`
   overflow-x: hidden;
   transition: 0.2s ease-in-out;
   transition-delay: 1s;
+
   &:invert {
     -webkit-filter: invert(1);
   }
@@ -201,7 +179,7 @@ const Wrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  /* font-family: $serif; */
+  font-family: "Lobster", cursive;
   position: relative;
   z-index: 2;
   &::before,
@@ -331,6 +309,7 @@ const Adress = styled.div`
     top: 50%;
     p {
       line-height: 2;
+      top: -50%;
     }
     &:after {
       background: #fcdab7;
@@ -412,6 +391,7 @@ const Form = styled.form`
   display: block;
   margin: 10% auto 0;
   transition: 0.2s ease-in-out;
+
   label {
     color: #2a3088;
     font-weight: 700;
@@ -560,11 +540,12 @@ const Button = styled.button`
   background: transparent;
   border: 0px solid;
   max-width: 200px;
-  font-size: 1.25em;
+  font-size: 1.5em;
   color: #2a3088;
   display: block;
   padding: 2em;
   font-weight: 700;
+  font-family: "Raleway", sans-serif;
   text-shadow: none;
   background: #fcdab7;
   transition: 0.2s ease-in-out;
