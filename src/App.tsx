@@ -1,5 +1,4 @@
 import GlobalStyle from "./globalStyles";
-import HomePage from "./routes/HomePage";
 import Contact from "./routes/Contact";
 import About from "./routes/About";
 import Projects from "./routes/Projects";
@@ -29,7 +28,6 @@ function App() {
         {menuItems.map((menu) => (
           <Element key={menu.id} name={menu.title}>
             <div className="content">
-              {menu.title === "home" && <HomePage />}
               {menu.title === "about" && <About />}
               {menu.title === "Portfolio" && <Projects />}
               {menu.title === "Contact" && <Contact />}

@@ -1,18 +1,14 @@
 const menuItems = [
   {
     id: 1,
-    title: "home",
-  },
-  {
-    id: 2,
     title: "about",
   },
   {
-    id: 3,
+    id: 2,
     title: "Portfolio",
   },
   {
-    id: 4,
+    id: 3,
     title: "Contact",
   },
 ];
