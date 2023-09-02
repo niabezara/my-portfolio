@@ -1,4 +1,4 @@
-import styled, { ThemeProvider } from "styled-components";
+import styled from "styled-components";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { useState, useRef } from "react";
 import emailjs from "@emailjs/browser";
@@ -84,7 +84,7 @@ export default function Contact() {
           <Pen></Pen>
           {success ? (
             <SuccessConatiner>
-              <p>We'll be in touch soon</p>
+              <p>I'll be in touch soon</p>
               <span></span>
             </SuccessConatiner>
           ) : (
@@ -574,30 +574,32 @@ const Button = styled.button`
   }
 `;
 const SuccessConatiner = styled.div`
-  display: block;
   position: absolute;
   top: 50%;
   left: 50%;
   max-width: 80%;
   transform-style: preserve-3d;
   transition: 0.2s ease-in;
-  transform: scaleY(0) translateX(-50%) translateY(-50%) translateZ(2em);
   font-size: 1.5em;
   background: #fcdab7;
-  padding: 0.5em;
+  padding: 1.5em;
   text-align: center;
   border: 2px solid #2a3088;
-  transform: translateZ(-1em);
-
+  transform: scaleY(1) translateX(-50%) translateY(-50%) translateZ(2em);
   p {
-    margin: 0px;
     display: inline-block;
     color: #2a3088;
   }
-  span {
-    display: block;
-    font-size: 1.25em;
-    color: #00927f;
-    font-weight: 100;
+
+  &::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #f6b781;
+    border: 2px solid #2a3088;
+    left: -5%;
+    top: 20%;
+    transform: translateZ(-1em);
   }
 `;
