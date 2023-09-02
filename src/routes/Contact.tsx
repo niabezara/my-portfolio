@@ -58,7 +58,7 @@ export default function Contact() {
           <Pen></Pen>
           {success ? (
             <SuccessConatiner>
-              <p>I'll be in touch soon</p>
+              <p>I'll be in touch soon 💤</p>
               <span></span>
             </SuccessConatiner>
           ) : (

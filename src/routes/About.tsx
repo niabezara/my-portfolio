@@ -1,6 +1,4 @@
-import React, { useEffect } from "react";
 import styled from "styled-components";
-import { Parallax, ParallaxLayer } from "@react-spring/parallax";
 import Typewriter from "typewriter-effect";
 export default function About() {
   return (
